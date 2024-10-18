@@ -1,0 +1,26 @@
+<!-- index.ejs -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Homepage!</h1>
+    <button><a href="/new">Write message</a></button>
+    <div class="messages">
+        <% messages.forEach((message,index) => { %>
+            <ul>
+                <li><%= message.user %></li>
+                <li><%= message.text %></li>
+                <li><%= message.added %></li>
+                <button><a href="/messages/<%= index %>">view details</a></button>
+            </ul>
+            
+      <%  }); %>
+    </div>
+</body>
+</html>
